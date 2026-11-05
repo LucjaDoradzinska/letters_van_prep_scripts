@@ -76,7 +76,6 @@ for(N in n_subjects_grid) {
   successes_for_N <- future_lapply(1:n_simulations, function(i) {
     data_sim <- generate_sim_data(i, N)
     
-    # 3. DOPASOWANIE MODELU
     fit_sim <- update(fit_base, newdata = data_sim, iter = 800, warmup = 300, 
                       recompile = FALSE, refresh = 0)
     
